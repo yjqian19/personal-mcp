@@ -1,42 +1,64 @@
-# personal-mcp
+# EXIF Extractor MCP Server
 
-An MCP server built with [Smithery CLI](https://smithery.ai/docs/getting_started/quickstart_build_python)
+A simple MCP server for extracting EXIF information from JPG and PNG images.
 
-## Prerequisites
+## Features
 
-- **Smithery API key**: Get yours at [smithery.ai/account/api-keys](https://smithery.ai/account/api-keys)
+- Extract EXIF data from image URLs or Base64 data
+- Support for JPG and PNG formats
+- Extract camera information, technical parameters, and image details
 
-## Getting Started
+## Installation
 
-1. Run the server:
-   ```bash
-   uv run dev
-   ```
+```bash
+uv sync
+```
 
-2. Test interactively:
+## Running
 
-   ```bash
-   uv run playground
-   ```
+```bash
+# Development mode
+uv run dev
 
-Try saying "Say hello to John" to test the example tool.
+# Production mode
+uv run start
 
-## Development
+# Interactive testing
+uv run playground
+```
 
-Your server code is in `src/hello_server/server.py`. Add or update your server capabilities there.
+## Usage
 
-## Deploy
+### Tool: `extract_exif`
+Extract EXIF information from image URL or Base64 data.
 
-Ready to deploy? Push your code to GitHub and deploy to Smithery:
+**Parameters:**
+- `image_input` (string): Image URL or Base64 encoded image data
 
-1. Create a new repository at [github.com/new](https://github.com/new)
+### Resource: `exif://supported-formats`
+Information about supported image formats and extracted EXIF data.
 
-2. Initialize git and push to GitHub:
-   ```bash
-   git add .
-   git commit -m "Hello world 👋"
-   git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
-   git push -u origin main
-   ```
+## Configuration
 
-3. Deploy your server to Smithery at [smithery.ai/new](https://smithery.ai/new)
+- `timeout` (int): Request timeout in seconds (default: 30)
+- `max_file_size` (int): Maximum file size in bytes (default: 50MB)
+- `include_technical` (bool): Include technical parameters (default: true)
+- `include_location` (bool): Include location information (default: false)
+
+## Project Structure
+
+```
+exif-extractor/
+├── pyproject.toml         # Project config
+├── smithery.yaml          # Runtime specification
+├── src/
+│   └── exif_extractor/    # Server module
+│       ├── __init__.py
+│       └── server.py      # Main server implementation
+└── README.md
+```
+
+## Resources
+
+- [Smithery Documentation](https://smithery.ai/docs)
+- [MCP Protocol](https://modelcontextprotocol.io)
