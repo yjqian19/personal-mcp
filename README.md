@@ -1,4 +1,5 @@
 # EXIF Extractor MCP Server
+[![smithery badge](https://smithery.ai/badge/@yjqian19/personal-mcp-exif)](https://smithery.ai/server/@yjqian19/personal-mcp-exif)
 
 A simple MCP server for extracting EXIF information from JPG and PNG images.
 
@@ -10,6 +11,15 @@ A simple MCP server for extracting EXIF information from JPG and PNG images.
 
 ## Installation
 
+### Installing via Smithery
+
+To install personal-mcp-exif automatically via [Smithery](https://smithery.ai/server/@yjqian19/personal-mcp-exif):
+
+```bash
+npx -y @smithery/cli install @yjqian19/personal-mcp-exif
+```
+
+### Manual Installation
 ```bash
 uv sync
 ```
