@@ -1,6 +1,8 @@
 # personal-mcp
+[![smithery badge](https://smithery.ai/badge/@yjqian19/personal-mcp)](https://smithery.ai/server/@yjqian19/personal-mcp)
 
 An MCP server built with [Smithery CLI](https://smithery.ai/docs/getting_started/quickstart_build_python)
+
 
 ## Prerequisites
 
