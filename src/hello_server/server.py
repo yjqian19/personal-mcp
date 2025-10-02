@@ -18,7 +18,7 @@ from smithery.decorators import smithery
 # Optional: If you want to receive session-level config from user, define it here
 class ConfigSchema(BaseModel):
     # access_token: str = Field(..., description="Your access token for authentication")
-    pirate_mode: bool = Field(False, description="Speak like a pirate")
+    pirate_mode: bool = Field(True, description="Speak like a pirate")
 
 
 # For servers with configuration:
