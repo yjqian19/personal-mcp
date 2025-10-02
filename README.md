@@ -35,8 +35,34 @@ Extract EXIF information from image URL or Base64 data.
 **Parameters:**
 - `image_input` (string): Image URL or Base64 encoded image data
 
+**Important Notes:**
+- **URL Input**: Must be a publicly accessible image URL (no authentication required)
+- **Base64 Input**: Use `data:image/jpeg;base64,<base64_string>` format
+- **Sample Images**: Test images available in [sample_imgs](https://github.com/your-username/exif-extractor/tree/main/sample_imgs) directory
+
 ### Resource: `exif://supported-formats`
 Information about supported image formats and extracted EXIF data.
+
+## Testing
+
+### Using Public URLs
+The server requires publicly accessible image URLs without authentication. You can:
+
+1. **Use sample images** from the [sample_imgs](https://github.com/your-username/exif-extractor/tree/main/sample_imgs) directory
+2. **Upload your own images** to services like:
+   - [Postimages](https://postimages.org/) - Free, no registration required
+   - [ImgBB](https://imgbb.com/) - Free image hosting
+   - [GitHub](https://github.com) - Upload to your repository
+
+### Using Base64
+For local images, convert to Base64:
+```python
+import base64
+
+with open("your_image.jpg", "rb") as f:
+    base64_string = base64.b64encode(f.read()).decode('utf-8')
+    data_url = f"data:image/jpeg;base64,{base64_string}"
+```
 
 ## Configuration
 
